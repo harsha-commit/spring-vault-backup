@@ -1,0 +1,30 @@
+server:
+  port: 8083
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: springvaultbank@gmail.com
+    password: evumgdxmoyvlxywz
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: smtp.gmail.com
+  application:
+    name: NOTIFICATION-SERVICE
+  config:
+    import: configserver:http://localhost:9296
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
